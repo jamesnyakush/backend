@@ -11,8 +11,9 @@ type House struct {
 	HouseNumber    string       `json:"house_number"`
 	Title          string       `json:"title"`
 	Room           int          `json:"room"`
-	Description    string       `json:"description"`
 	Verified       bool         `json:"verified"`
+	Occupied       bool         `json:"occupied"`
+	Description    string       `json:"description"`
 	CreatedAt      time.Time    `json:"created_at"`
 	UpdatedAt      time.Time    `json:"updated_at"`
 	DeletedAt      time.Time    `json:"deleted_at"`

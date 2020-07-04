@@ -8,8 +8,6 @@ type Building struct {
 	BuildingImages []BuildingImage `json:"building_images"`
 	BuildingName   string          `json:"building_name"`
 	Verified       bool            `json:"verified"`
-	CountyName     string          `json:"county_name"`
-	CountyCode     uint            `json:"county_code"`
 	Description    string          `json:"description"`
 	CreatedAt      time.Time       `json:"created_at"`
 	UpdatedAt      time.Time       `json:"updated_at"`

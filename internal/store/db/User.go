@@ -1,6 +1,6 @@
 package db
 
-func Get(username,email,password string) {
+func Get() {
 	/*
 		user := model.User{
 			Username: username,
@@ -10,7 +10,7 @@ func Get(username,email,password string) {
 	*/
 }
 
-func New(firstname,lastname,username,email string,phone int) {
+func New() {
 	/*
 		user := model.User{
 			FirstName:            firstname,

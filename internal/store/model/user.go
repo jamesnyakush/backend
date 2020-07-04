@@ -22,7 +22,7 @@ type User struct {
 	CreatedAt            time.Time `json:"created_at"`
 	UpdatedAt            time.Time `json:"updated_at"`
 	DeletedAt            time.Time `json:"deleted_at"`
-	Roles                []Role    `json:"roles"`
+	Roles                Role      `json:"roles"`
 }
 
 type Role struct {
