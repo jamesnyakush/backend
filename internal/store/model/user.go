@@ -1,9 +1,12 @@
 package model
 
-import "time"
+import (
+	"github.com/gofrs/uuid"
+	"time"
+)
 
 type User struct {
-	UserId               uint      `json:"user_id"`
+	UserId               uuid.UUID      `json:"user_id"`
 	FirstName            string    `json:"first_name"`
 	LastName             string    `json:"last_name"`
 	Username             string    `json:"username"`
@@ -16,7 +19,7 @@ type User struct {
 	InviteCode           string    `json:"invite_code"`
 	Verified             bool      `json:"verified"`
 	VerificationExpires  string    `json:"verification_expires"`
-	VerificationToken    string    `json:"verification_token"`
+	VerificationToken    uuid.UUID    `json:"verification_token"`
 	ResetPasswordExpires time.Time `json:"reset_password_expires"`
 	ResetPasswordToken   string    `json:"reset_password_token"`
 	CreatedAt            time.Time `json:"created_at"`
