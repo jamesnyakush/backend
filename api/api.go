@@ -14,7 +14,6 @@ func New(enableCORS bool, cfg *config.Config) (*chi.Mux, error) {
 
 func corsConfig() *cors.Cors {
 	return cors.New(cors.Options{
-
 		AllowedOrigins:     []string{"*"},
 		AllowedMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
 		AllowedHeaders:     []string{"Accept", "Authorization", "Accept-Encoding", "Content-Type", "Content-Length", "X-CSRF-Token"},
