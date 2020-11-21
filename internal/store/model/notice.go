@@ -1,5 +1,7 @@
 package model
 
+import "github.com/gofrs/uuid"
+
 type Notice struct {
-	NoticeId uint `json:"notice_id"`
+	NoticeId uuid.UUID `json:"notice_id"`
 }

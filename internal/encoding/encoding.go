@@ -2,8 +2,8 @@ package encoding
 
 import (
 	"crypto/rand"
-	"encoding/hex"
 	b64 "encoding/base64"
+	"encoding/hex"
 	"github.com/gofrs/uuid"
 	"log"
 )

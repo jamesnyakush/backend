@@ -6,7 +6,7 @@ import (
 )
 
 type User struct {
-	UserId               uuid.UUID      `json:"user_id"`
+	UserId               uuid.UUID `json:"user_id"`
 	FirstName            string    `json:"first_name"`
 	LastName             string    `json:"last_name"`
 	Username             string    `json:"username"`
@@ -19,7 +19,7 @@ type User struct {
 	InviteCode           string    `json:"invite_code"`
 	Verified             bool      `json:"verified"`
 	VerificationExpires  string    `json:"verification_expires"`
-	VerificationToken    uuid.UUID    `json:"verification_token"`
+	VerificationToken    uuid.UUID `json:"verification_token"`
 	ResetPasswordExpires time.Time `json:"reset_password_expires"`
 	ResetPasswordToken   string    `json:"reset_password_token"`
 	CreatedAt            time.Time `json:"created_at"`
@@ -29,12 +29,12 @@ type User struct {
 }
 
 type Role struct {
-	RoleId      string       `json:"role_id"`
+	RoleId      uuid.UUID    `json:"role_id"`
 	RoleName    string       `json:"role_name"`
 	Permissions []Permission `json:"permissions"`
 }
 
 type Permission struct {
-	PermissionId   string `json:"permission_id"`
-	PermissionName string `json:"permission_name"`
+	PermissionId   uuid.UUID `json:"permission_id"`
+	PermissionName string    `json:"permission_name"`
 }

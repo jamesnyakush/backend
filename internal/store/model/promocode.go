@@ -1,12 +1,15 @@
 package model
 
-import "time"
+import (
+	"github.com/gofrs/uuid"
+	"time"
+)
 
 type PromoCode struct {
-	PromoCodeId        string    `json:"promo_code_id"`
+	PromoCodeId        uuid.UUID `json:"promo_code_id"`
 	Code               string    `json:"code"`
 	Message            string    `json:"message"`
-	Users              uint      `json:"users"`
+	Users              []User    `json:"users"`
 	Status             bool      `json:"status"`
 	Discount           string    `json:"discount"`
 	DiscountType       string    `json:"discount_type"`

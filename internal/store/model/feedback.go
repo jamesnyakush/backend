@@ -1,7 +1,9 @@
 package model
 
+import "github.com/gofrs/uuid"
+
 type Feedback struct {
-	FeedbackId  string `json:"feedback_id"`
-	Subject     string `json:"subject"`
-	Description string `json:"description"`
+	FeedbackId  uuid.UUID `json:"feedback_id"`
+	Subject     string    `json:"subject"`
+	Description string    `json:"description"`
 }

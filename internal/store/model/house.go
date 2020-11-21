@@ -1,22 +1,25 @@
 package model
 
-import "time"
+import (
+	"github.com/gofrs/uuid"
+	"time"
+)
 
 type House struct {
-	HouseId        uint         `json:"house_id"`
-	UserId         uint         `json:"user_id"`
-	BuildingId     uint         `json:"building_id"`
-	BuildingTypeId uint         `json:"building_type_id"`
-	HouseImages    []HouseImage `json:"house_images"`
-	HouseNumber    string       `json:"house_number"`
-	Title          string       `json:"title"`
-	Room           int          `json:"room"`
-	Verified       bool         `json:"verified"`
-	Occupied       bool         `json:"occupied"`
-	Description    string       `json:"description"`
-	CreatedAt      time.Time    `json:"created_at"`
-	UpdatedAt      time.Time    `json:"updated_at"`
-	DeletedAt      time.Time    `json:"deleted_at"`
+	HouseId     uuid.UUID    `json:"house_id"`
+	UserId      uint         `json:"user_id"`
+	BuildingId  uint         `json:"building_id"`
+	HouseTypeId uint         `json:"house_type_id"`
+	HouseImages []HouseImage `json:"house_images"`
+	HouseNumber string       `json:"house_number"`
+	Title       string       `json:"title"`
+	Room        int          `json:"room"`
+	Verified    bool         `json:"verified"`
+	Occupied    bool         `json:"occupied"`
+	Description string       `json:"description"`
+	CreatedAt   time.Time    `json:"created_at"`
+	UpdatedAt   time.Time    `json:"updated_at"`
+	DeletedAt   time.Time    `json:"deleted_at"`
 }
 
 type HouseImage struct {
