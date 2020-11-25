@@ -1,14 +1,4 @@
-package db
-
-func Get() {
-	/*
-		user := model.User{
-			Username: username,
-			Email: email,
-			Password: password,
-		}
-	*/
-}
+package postgresql
 
 func New() {
 	/*
@@ -29,6 +19,14 @@ func New() {
 			CreatedAt:            time.Now(),
 		}
 	*/
+}
+
+func Get() {
+
+}
+
+func GetByEmail() {
+
 }
 
 func Update() {

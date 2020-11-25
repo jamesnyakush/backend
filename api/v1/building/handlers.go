@@ -1,7 +1,6 @@
 package building
 
 import (
-	"fmt"
 	validation "github.com/go-ozzo/ozzo-validation"
 	"github.com/go-ozzo/ozzo-validation/is"
 	"net/http"
@@ -46,15 +45,44 @@ func (body *buildingTypeRequest) Bind(r *http.Request) error {
 	return validation.ValidateStruct(body, validation.Field(&body.Type, validation.Required, is.Alphanumeric))
 }
 
-func (rs Resource) HandleCreateBuilding(w http.ResponseWriter,r *http.Request)  {
-
-	body := buildingRequest{}
-
-
-	fmt.Println(body)
-
+func (rs Resource) HandleGetBuildings(w http.ResponseWriter, r *http.Request) {
 }
 
-func (rs Resource) HandleUpdateBuiilding(w http.ResponseWriter,r *http.Request)  {
+func (rs Resource) HandleGetBuilding(w http.ResponseWriter, r *http.Request) {
+}
 
+func (rs Resource) HandleGetBuildingImages(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleGetBuildingType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateBuilding(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateBuildingType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateBuildingImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleVerifyBuilding(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateBuilding(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateBuildingImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateBuildingType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteBuilding(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteBuildingImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteBuildingType(w http.ResponseWriter, r *http.Request) {
 }

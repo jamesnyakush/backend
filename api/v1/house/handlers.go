@@ -58,3 +58,42 @@ func (body *houseTypeRequest) Bind(r *http.Request) error {
 	body.Type = strings.TrimSpace(body.Type)
 	return validation.ValidateStruct(body, validation.Field(&body.Type, validation.Required, is.Alphanumeric))
 }
+
+func (rs Resource) HandleGetHouses(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleGetHouse(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleGetHouseImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleGetHouseType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateHouse(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateHouseImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateHouseType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateHouse(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateHouseType(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleUpdateHouseImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteHouse(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteHouseImage(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteHouseType(w http.ResponseWriter, r *http.Request) {
+}

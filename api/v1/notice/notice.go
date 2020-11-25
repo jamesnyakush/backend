@@ -7,10 +7,10 @@ import (
 
 type Resource struct {
 	Store store.Store
-	Config config.Config
+	Config *config.Config
 }
 
-func NewResource(store store.Store,cfg config.Config) *Resource  {
+func NewResource(store store.Store,cfg *config.Config) *Resource  {
 	return &Resource{
 		Store: store,
 		Config: cfg,

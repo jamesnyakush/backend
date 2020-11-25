@@ -6,13 +6,13 @@ import (
 )
 
 type Resource struct {
-	Store store.Store
-	Config config.Config
+	Store  store.Store
+	Config *config.Config
 }
 
-func NewResource(store store.Store,cfg config.Config) *Resource {
+func NewResource(store store.Store, cfg *config.Config) *Resource {
 	return &Resource{
-		Store: store,
+		Store:  store,
 		Config: cfg,
 	}
 }

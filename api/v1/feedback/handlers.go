@@ -19,7 +19,16 @@ func (body *feedbackRequest) Bind(r *http.Request) error {
 	return validation.ValidateStruct(body, validation.Field(&body.Subject, validation.Required), validation.Field(&body.Description, validation.Required))
 }
 
-func (rs Resource) handleCreateFeedback(w http.ResponseWriter, r *http.Request) {
+func (rs Resource) HandleGetFeedback(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleCreateFeedback(w http.ResponseWriter, r *http.Request) {
 	body := feedbackRequest{}
 	fmt.Println(body)
+}
+
+func (rs Resource) HandleUpdateFeedback(w http.ResponseWriter, r *http.Request) {
+}
+
+func (rs Resource) HandleDeleteFeedback(w http.ResponseWriter, r *http.Request) {
 }

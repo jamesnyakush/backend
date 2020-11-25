@@ -1,4 +1,4 @@
-package role
+package payment
 
 import "github.com/go-chi/chi"
 
