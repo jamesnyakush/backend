@@ -8,6 +8,14 @@ import (
 	"path"
 )
 
+type DatabaseConfig struct {
+	User     string `yaml:"user"`
+	Password string `yaml:"password"`
+	Host     string `yaml:"host"`
+	Port     string `yaml:"port"`
+	DBName   string `yaml:"dbname"`
+}
+
 /**
 * Port smtp port
 * Host smtp host e.g. smtp.gmail.com
@@ -16,14 +24,6 @@ import (
 * FromName email sender's name.
 * FromAddress email sender's email address
  */
-
-type DatabaseConfig struct {
-	User     string `yaml:"user"`
-	Password string `yaml:"password"`
-	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
-	DBName   string `yaml:"dbname"`
-}
 type SMTPConfig struct {
 	Port        string `yaml:"port"`
 	Host        string `yaml:"host"`
@@ -32,10 +32,24 @@ type SMTPConfig struct {
 	FromName    string `yaml:"from_name"`
 	FromAddress string `yaml:"from_address"`
 }
+
+/**
+* Port smtp port
+* Host smtp host e.g. smtp.gmail.com
+ */
 type PesaswapConfig struct {
 	ConsumerKey string `yaml:"consumer_key"`
 	ApiKey      string `yaml:"apikey"`
 }
+
+/**
+* Port smtp port
+* Host smtp host e.g. smtp.gmail.com
+* Username smtp username.
+* Password smtp password.
+* FromName email sender's name.
+* FromAddress email sender's email address
+ */
 type MpesaConfig struct {
 	Sandbox        string `yaml:"sandbox"`
 	ConsumerKey    string `yaml:"consumer_key"`
@@ -47,9 +61,11 @@ type MpesaConfig struct {
 	ValidationUrl  string `yaml:"validation_url"`
 	CallbackUrl    string `yaml:"callback_url"`
 }
+
 type SMSConfig struct {
 	Username       string `yaml:"username"`
 	ConsumerSecret string `yaml:"consumer_secret"`
+	Shortcode      string `yaml:"shortcode"`
 }
 
 /**
@@ -60,6 +76,7 @@ type YamlConfig struct {
 	SMTP      SMTPConfig     `yaml:"smtp"`
 	Pesaswap  PesaswapConfig `yaml:"pesaswap"`
 	Mpesa     MpesaConfig    `yaml:"mpesa"`
+	SMS       SMSConfig      `yaml:"sms"`
 	AppSecret string         `yaml:"app_secret_key"`
 }
 

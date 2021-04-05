@@ -1,8 +1,12 @@
 package model
 
-import "github.com/gofrs/uuid"
+import (
+	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
+)
 
 type UtilityProvider struct {
+	gorm.Model
 	UtilityProviderId uuid.UUID `json:"utility_provider_id"`
 	Company           string    `json:"company"`
 	CountyCode        string    `json:"county_code"`
@@ -12,6 +16,7 @@ type UtilityProvider struct {
 }
 
 type UtilityType struct {
+	gorm.Model
 	UtilityTypeId uuid.UUID `json:"utility_type_id"`
 	Type          string    `json:"type"`
 }

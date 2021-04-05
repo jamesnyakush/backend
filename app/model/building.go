@@ -1,8 +1,12 @@
 package model
 
-import "time"
+import (
+	"gorm.io/gorm"
+	"time"
+)
 
 type Building struct {
+	gorm.Model
 	BuildingId     uint            `json:"building_id"`
 	UserId         uint            `json:"user_id"`
 	BuildingImages []BuildingImage `json:"building_images"`
@@ -15,6 +19,7 @@ type Building struct {
 }
 
 type BuildingImage struct {
+	gorm.Model
 	BuildingImageId uint      `json:"building_image_id"`
 	BuildingId      uint      `json:"building_id"`
 	ImageUrl        string    `json:"image_url"`
@@ -24,6 +29,7 @@ type BuildingImage struct {
 }
 
 type BuildingType struct {
+	gorm.Model
 	BuildingTypeId uint      `json:"building_type_id"`
 	Type           string    `json:"type"`
 	CreatedAt      time.Time `json:"created_at"`

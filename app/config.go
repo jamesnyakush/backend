@@ -22,6 +22,11 @@ type SMTP struct {
 	FromAddress string
 }
 
+type Pesaswap struct {
+	ConsumerKey string
+	ApiKey      string
+}
+
 func (d Database) String(sslmode string) string {
 	return fmt.Sprintf(""+
 		"host=%s "+
@@ -34,8 +39,9 @@ func (d Database) String(sslmode string) string {
 }
 
 type Config struct {
-	DB   Database
-	Smtp SMTP
+	DB       Database
+	Smtp     SMTP
+	PesaSwap Pesaswap
 
 	Secret string
 }
@@ -56,6 +62,10 @@ func GetConfig(cfg config.YamlConfig) Config {
 			Password:    cfg.SMTP.Password,
 			FromName:    cfg.SMTP.FromName,
 			FromAddress: cfg.SMTP.FromAddress,
+		},
+		PesaSwap: Pesaswap{
+			ConsumerKey: cfg.Pesaswap.ConsumerKey,
+			ApiKey:      cfg.Pesaswap.ApiKey,
 		},
 
 		Secret: cfg.AppSecret,

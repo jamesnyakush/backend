@@ -2,10 +2,12 @@ package model
 
 import (
 	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
 	"time"
 )
 
 type User struct {
+	gorm.Model
 	UserId               uuid.UUID `json:"user_id"`
 	FirstName            string    `json:"first_name"`
 	LastName             string    `json:"last_name"`

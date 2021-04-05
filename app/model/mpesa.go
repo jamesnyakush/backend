@@ -1,8 +1,12 @@
 package model
 
-import "github.com/gofrs/uuid"
+import (
+	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
+)
 
 type MpesaC2B struct {
+	gorm.Model
 	MpesaC2BID        uuid.UUID `json:"mpesa_c2b_id"`
 	TransactionType   string    `json:"transaction_type"`
 	TransactionID     string    `json:"transaction_id"`
@@ -19,6 +23,7 @@ type MpesaC2B struct {
 }
 
 type MpesaB2C struct {
+	gorm.Model
 	MpesaB2CID                          uuid.UUID `json:"mpesa_b2c_id"`
 	ResultCode                          string    `json:"result_code"`
 	ResultDesc                          string    `json:"result_desc"`

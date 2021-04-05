@@ -2,10 +2,12 @@ package model
 
 import (
 	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
 	"time"
 )
 
 type Bill struct {
+	gorm.Model
 	BillId                uuid.UUID `json:"bill_id"`
 	UserId                uint      `json:"user_id"`
 	BillingDate           time.Time `json:"billing_date"`

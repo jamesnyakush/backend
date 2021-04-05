@@ -2,10 +2,12 @@ package model
 
 import (
 	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
 	"time"
 )
 
 type PromoCode struct {
+	gorm.Model
 	PromoCodeId        uuid.UUID `json:"promo_code_id"`
 	Code               string    `json:"code"`
 	Message            string    `json:"message"`

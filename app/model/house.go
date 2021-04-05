@@ -2,10 +2,12 @@ package model
 
 import (
 	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
 	"time"
 )
 
 type House struct {
+	gorm.Model
 	HouseId     uuid.UUID    `json:"house_id"`
 	UserId      uint         `json:"user_id"`
 	BuildingId  uint         `json:"building_id"`
@@ -23,6 +25,7 @@ type House struct {
 }
 
 type HouseImage struct {
+	gorm.Model
 	HouseImageId uint      `json:"house_image_id"`
 	HouseId      uint      `json:"house_id"`
 	ImageUrl     string    `json:"image_url"`
@@ -32,6 +35,7 @@ type HouseImage struct {
 }
 
 type HouseType struct {
+	gorm.Model
 	HouseTypeId uint      `json:"house_type_id"`
 	Type        string    `json:"type"`
 	CreatedAt   time.Time `json:"created_at"`
