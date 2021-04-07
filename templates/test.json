@@ -1,0 +1,30 @@
+{
+  "UserId": "AC312E60-BA4B-11EA-A700-4903572028FB",
+  "first_name": "James",
+  "last_name": "Nyakundi",
+  "email": "jnyakush99@gmail.com",
+  "phone": "+254746445198",
+  "county_code": "Nairobi",
+  "image_url": "https://staging.nyumbapoa.co.ke/public/images/james-nyakundi.jpg",
+  "push_notification_key": "2hjhjs2828167126u28",
+  "invite_code": "JAM2019",
+  "verified": 1,
+  "roles": {
+    "role_id": "AC312E60-BA4B-11EA-A700-4903572028FC",
+    "role_name": "Manager",
+    "permissions": [
+      {
+        "permission_id": "AC312E60-BA4B-11EA-A700-4903572028FD",
+        "permission_name": "add-sub-user"
+      },
+      {
+        "permission_id": "AC312E60-BA4B-11EA-A700-4903572028FE",
+        "permission_name": "add-advert"
+      },
+      {
+        "permission_id": "AC312E60-BA4B-11EA-A700-4903572028FG",
+        "permission_name": "suspend-user"
+      }
+    ]
+  }
+}

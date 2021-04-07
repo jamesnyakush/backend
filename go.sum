@@ -74,6 +74,8 @@ github.com/jackc/puddle v0.0.0-20190608224051-11cab39313c9/go.mod h1:m4B5Dj62Y0f
 github.com/jackc/puddle v1.1.0/go.mod h1:m4B5Dj62Y0fbyuIc15OsIqK0+JU8nkqQjsgx7dvjSWk=
 github.com/jackc/puddle v1.1.1/go.mod h1:m4B5Dj62Y0fbyuIc15OsIqK0+JU8nkqQjsgx7dvjSWk=
 github.com/jackc/puddle v1.1.3/go.mod h1:m4B5Dj62Y0fbyuIc15OsIqK0+JU8nkqQjsgx7dvjSWk=
+github.com/jamesnyakush/AT-SMS v0.0.0-20210406104315-178e9b8113bc h1:kjsxR2gMHB0HtbSSx0qluauLHjhjO/lVR4WV4zbNYVI=
+github.com/jamesnyakush/AT-SMS v0.0.0-20210406104315-178e9b8113bc/go.mod h1:qmvi2wfEZkuKi3YeYYVitfkGy8jVhEI2y7upYr7BK7o=
 github.com/jamesnyakush/pesaswap v0.0.0-20210404195532-8f70b83fbb77 h1:aiwVZWYI6st44OTCdCV9woDJny60ffnqmxkSfKSTXBw=
 github.com/jamesnyakush/pesaswap v0.0.0-20210404195532-8f70b83fbb77/go.mod h1:hU8kuY/sCW1raZLeqkRCDFoN+MksWCqfAyxg5fTt4vk=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=

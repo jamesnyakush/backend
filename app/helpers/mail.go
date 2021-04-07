@@ -13,10 +13,11 @@ type Info struct {
 
 func (i Info) SendEMail() {
 
-	t := template.New("template.html")
-
-	var err error
-	t, err = t.ParseFiles("template.html")
+	//t := templates.New("templates")
+	//
+	//var err error
+	t, err := template.ParseFiles("templates/template.html")
+	println(t)
 	if err != nil {
 		log.Println(err)
 	}
@@ -30,10 +31,9 @@ func (i Info) SendEMail() {
 	m := gomail.NewMessage()
 	m.SetHeader("From", "jnyakush99@gmail.com")
 	m.SetHeader("To", "welcome@gmail.com")
-	//m.SetAddressHeader("Cc", "<RECIPIENT CC>", "<RECIPIENT CC NAME>")
 	m.SetHeader("Subject", "golang test")
 	m.SetBody("text/html", result)
-	m.Attach("template.html") // attach whatever you want
+	m.Attach("templates/template.html") // attach whatever you want
 
 	d := gomail.NewDialer("smtp.mailtrap.io", 2525, "aa9386539a6a4a", "14626f11d10aa5")
 
