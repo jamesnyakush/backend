@@ -5,7 +5,7 @@ import (
 	"github.com/nyumbapoa/backend/app"
 )
 
-/*func Router(domain *registry.Domain, config app.Config) *fiber.App {
+/*func Router(domain *registry.Domain, configs app.Config) *fiber.App {
 
 	srv := fiber.New(
 		fiber.Config{ErrorHandler: error_handlers.ErrorHandler},
@@ -14,7 +14,7 @@ import (
 	apiGroup := srv.Group("/api")
 	apiGroup.Use(logger.New())
 
-	//apiRouteGroup(apiGroup, domain, config)
+	//apiRouteGroup(apiGroup, domain, configs)
 
 	return srv
 }
@@ -22,11 +22,11 @@ import (
  //domain *registry.Domain,
 func apiRouteGroup(api fiber.Router, config app.Config) {
 	/*
-		api.Post("/login/:user_type", user_handlers.Authenticate(domain, config))
+		api.Post("/login/:user_type", user_handlers.Authenticate(domain, configs))
 		api.Post("/user/:user_type", user_handlers.Register(domain))
 
 		// create group at /api/admin
-		admin := api.Group("/admin", middleware.AuthByBearerToken(config.Secret))
+		admin := api.Group("/admin", middleware.AuthByBearerToken(configs.Secret))
 		admin.Post("/assign-float", user_handlers.AssignFloat(domain.Admin))
 		admin.Post("/update-charge", user_handlers.UpdateCharge(domain.Tariff))
 		admin.Get("/get-tariff", user_handlers.GetTariff(domain.Tariff))

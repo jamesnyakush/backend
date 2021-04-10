@@ -1,0 +1,35 @@
+database:
+  host: "127.0.0.1"
+  port: "5432"
+  user: "mpesa"
+  password: "mpesa"
+  dbname: "mpesa"
+
+smtp:
+  port: ""
+  host: ""
+  username: ""
+  password: ""
+  from_name: ""
+  from_address: ""
+
+pesaswap:
+  consumer_key: ""
+  api_key: ""
+
+mpesa:
+  sandbox: ""
+  consumer_key: ""
+  consumer_secret: ""
+  initiator: ""
+  pay_bill: ""
+  shortcode: ""
+  pass_key: ""
+  validation_url: ""
+  callback_url: ""
+
+sms:
+  username: ""
+  consumer_secret: ""
+
+app_secret_key: "eQig7GS4cHO2su"

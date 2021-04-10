@@ -2,7 +2,7 @@ package app
 
 import (
 	"fmt"
-	"github.com/nyumbapoa/backend/config"
+	"github.com/nyumbapoa/backend/configs"
 )
 
 type Database struct {
@@ -66,7 +66,7 @@ type Config struct {
 	Secret string
 }
 
-func GetConfig(cfg config.YamlConfig) Config {
+func GetConfig(cfg configs.YamlConfig) Config {
 	return Config{
 		DB: Database{
 			User:     cfg.Database.User,

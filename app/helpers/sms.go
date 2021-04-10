@@ -35,6 +35,7 @@ func Sms(recipient, message string) {
 	if err != nil {
 		fmt.Printf("Failed to send sms: %v", err)
 	}
+
 	fmt.Printf("SMS Send reponse: %v\n", sendResponse)
 
 }

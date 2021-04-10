@@ -7,10 +7,10 @@ import (
 )
 
 type Transaction struct {
-	gorm.Model
 	TransactionId     uuid.UUID
 	BillId            uuid.UUID
 	TransactionAmount uint
 	TransactionDate   time.Time
 	PaymentMethodId   uint
+	gorm.Model
 }

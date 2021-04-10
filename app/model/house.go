@@ -6,7 +6,6 @@ import (
 )
 
 type House struct {
-	gorm.Model
 	HouseId     uuid.UUID
 	HouseNumber string `gorm:"not null;unique"`
 	Title       string `gorm:"not null;unique"`
@@ -17,17 +16,18 @@ type House struct {
 	UserId      uuid.UUID
 	BuildingId  uuid.UUID
 	HouseTypeId uuid.UUID
+	gorm.Model
 }
 
 type HouseImage struct {
-	gorm.Model
 	HouseImageId uuid.UUID
 	HouseId      uuid.UUID
 	ImageUrl     string
+	gorm.Model
 }
 
 type HouseType struct {
-	gorm.Model
 	HouseTypeId uuid.UUID
 	Type        string `gorm:"not null;unique"`
+	gorm.Model
 }

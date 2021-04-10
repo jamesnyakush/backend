@@ -6,6 +6,6 @@ import (
 )
 
 type Notice struct {
-	gorm.Model
 	NoticeId uuid.UUID
+	gorm.Model
 }

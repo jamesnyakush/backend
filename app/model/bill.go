@@ -7,7 +7,6 @@ import (
 )
 
 type Bill struct {
-	gorm.Model
 	BillId                uuid.UUID
 	BillingDate           time.Time
 	LastBillingDate       time.Time
@@ -17,4 +16,5 @@ type Bill struct {
 	Amount                uint `gorm:"not null"`
 	UserId                uuid.UUID
 	TransactionExternalId uuid.UUID
+	gorm.Model
 }

@@ -6,23 +6,23 @@ import (
 )
 
 type Building struct {
-	gorm.Model
 	BuildingId     uint            `json:"building_id"`
 	UserId         uint            `json:"user_id"`
 	BuildingName   string          `json:"building_name"`
 	Verified       bool            `json:"verified"`
 	Description    string          `json:"description"`
+	gorm.Model
 }
 
 type BuildingImage struct {
-	gorm.Model
 	BuildingImageId uuid.UUID
 	BuildingId      uuid.UUID
 	ImageUrl        string
+	gorm.Model
 }
 
 type BuildingType struct {
-	gorm.Model
 	BuildingTypeId uuid.UUID
 	Type           string  `gorm:"not null; unique"`
+	gorm.Model
 }

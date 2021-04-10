@@ -6,7 +6,6 @@ import (
 )
 
 type MpesaC2B struct {
-	gorm.Model
 	MpesaC2BID        uuid.UUID
 	TransactionType   string `gorm:"not null"`
 	TransactionID     string `gorm:"not null;unique"`
@@ -20,10 +19,10 @@ type MpesaC2B struct {
 	FirstName         string `gorm:"not null"`
 	MiddleName        string `gorm:"not null"`
 	LastName          string `gorm:"not null"`
+	gorm.Model
 }
 
 type MpesaB2C struct {
-	gorm.Model
 	MpesaB2CID                          uuid.UUID
 	ResultCode                          string `gorm:"not null"`
 	ResultDesc                          string `gorm:"not null"`
@@ -38,4 +37,5 @@ type MpesaB2C struct {
 	B2CChargesPaidAccountAvailableFunds string `gorm:"not null"`
 	ReceiverPartyPublicName             string `gorm:"not null"`
 	B2CRecipientIsRegisteredCustomer    string `gorm:"not null"`
+	gorm.Model
 }

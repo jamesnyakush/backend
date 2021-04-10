@@ -7,7 +7,6 @@ import (
 )
 
 type PromoCode struct {
-	gorm.Model
 	PromoCodeId        uuid.UUID
 	Code               string
 	Message            string
@@ -19,4 +18,5 @@ type PromoCode struct {
 	RepeatUsage        string
 	StartDate          time.Time
 	EndDate            time.Time
+	gorm.Model
 }

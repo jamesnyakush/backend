@@ -7,7 +7,6 @@ import (
 )
 
 type User struct {
-	gorm.Model
 	UserId               uuid.UUID
 	FirstName            string
 	LastName             string
@@ -23,14 +22,17 @@ type User struct {
 	VerificationToken    uuid.UUID
 	ResetPasswordExpires time.Time
 	ResetPasswordToken   string
+	gorm.Model
 }
 
 type Role struct {
 	RoleId   uuid.UUID
 	RoleName string `gorm:"not null; unique"`
+	gorm.Model
 }
 
 type Permission struct {
 	PermissionId   uuid.UUID
 	PermissionName string `gorm:"not null; unique"`
+	gorm.Model
 }
