@@ -20,7 +20,6 @@ func Migrate(database *storage.Database) {
 		model.HouseImage{},
 		model.HouseType{},
 		model.Notice{},
-		model.PaymentMethod{},
 		model.PromoCode{},
 		model.Transaction{},
 		model.UtilityProvider{},

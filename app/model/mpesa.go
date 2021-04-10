@@ -7,35 +7,35 @@ import (
 
 type MpesaC2B struct {
 	gorm.Model
-	MpesaC2BID        uuid.UUID `json:"mpesa_c2b_id"`
-	TransactionType   string    `json:"transaction_type"`
-	TransactionID     string    `json:"transaction_id"`
-	TransactionTime   string    `json:"transaction_time"`
-	TransactionAmount string    `json:"transaction_amount"`
-	MSISDN            string    `json:"msisdn"`
-	ShortCode         string    `json:"short_code"`
-	OrgAccountBalance string    `json:"org_account_balance"`
-	BillRefNumber     string    `json:"bill_ref_number"`
-	InvoiceNumber     string    `json:"invoice_number"`
-	FirstName         string    `json:"first_name"`
-	MiddleName        string    `json:"middle_name"`
-	LastName          string    `json:"last_name"`
+	MpesaC2BID        uuid.UUID
+	TransactionType   string `gorm:"not null"`
+	TransactionID     string `gorm:"not null;unique"`
+	TransactionTime   string `gorm:"not null"`
+	TransactionAmount string `gorm:"not null"`
+	MSISDN            string `gorm:"not null"`
+	ShortCode         string `gorm:"not null"`
+	OrgAccountBalance string `gorm:"not null"`
+	BillRefNumber     string `gorm:"not null;unique"`
+	InvoiceNumber     string `gorm:"not null;unique"`
+	FirstName         string `gorm:"not null"`
+	MiddleName        string `gorm:"not null"`
+	LastName          string `gorm:"not null"`
 }
 
 type MpesaB2C struct {
 	gorm.Model
-	MpesaB2CID                          uuid.UUID `json:"mpesa_b2c_id"`
-	ResultCode                          string    `json:"result_code"`
-	ResultDesc                          string    `json:"result_desc"`
-	OriginatorConversationID            string    `json:"originator_conversation_id"`
-	ConversationID                      string    `json:"conversation_id"`
-	TransactionID                       string    `json:"transaction_id"`
-	Msisdn                              string    `json:"msisdn"`
-	B2CWorkingAccountAvailableFunds     string    `json:"b2c_working_account_available_funds"`
-	B2CUtilityAccountAvailableFunds     string    `json:"b2c_utility_account_available_funds"`
-	Amount                              string    `json:"amount"`
-	TransactionCompletedDateTime        string    `json:"transaction_completed_date_time"`
-	B2CChargesPaidAccountAvailableFunds string    `json:"b2c_charges_paid_account_available_funds"`
-	ReceiverPartyPublicName             string    `json:"receiver_party_public_name"`
-	B2CRecipientIsRegisteredCustomer    string    `json:"b2c_recipient_is_registered_customer"`
+	MpesaB2CID                          uuid.UUID
+	ResultCode                          string `gorm:"not null"`
+	ResultDesc                          string `gorm:"not null"`
+	OriginatorConversationID            string `gorm:"not null"`
+	ConversationID                      string `gorm:"not null"`
+	TransactionID                       string `gorm:"not null;unique"`
+	Msisdn                              string `gorm:"not null"`
+	B2CWorkingAccountAvailableFunds     string `gorm:"not null"`
+	B2CUtilityAccountAvailableFunds     string `gorm:"not null"`
+	Amount                              string `gorm:"not null"`
+	TransactionCompletedDateTime        string `gorm:"not null"`
+	B2CChargesPaidAccountAvailableFunds string `gorm:"not null"`
+	ReceiverPartyPublicName             string `gorm:"not null"`
+	B2CRecipientIsRegisteredCustomer    string `gorm:"not null"`
 }

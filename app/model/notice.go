@@ -7,5 +7,5 @@ import (
 
 type Notice struct {
 	gorm.Model
-	NoticeId uuid.UUID `json:"notice_id"`
+	NoticeId uuid.UUID
 }
