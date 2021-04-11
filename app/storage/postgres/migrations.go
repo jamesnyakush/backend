@@ -24,10 +24,10 @@ func Migrate(database *storage.Database) {
 		model.Transaction{},
 		model.UtilityProvider{},
 		model.UtilityType{},
+		model.Land{},
 	)
 
 	if err != nil {
 		log.Println(err)
 	}
-
 }
