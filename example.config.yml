@@ -5,4 +5,32 @@ database:
   password: "mpesa"
   dbname: "mpesa"
 
+smtp:
+  port: "2525"
+  host: "smtp.mailtrap.io"
+  username: "aa9386539a6a4a"
+  password: "14626f11d10aa5"
+  from_name: ""
+  from_address: ""
+
+pesaswap:
+  consumer_key: "dMMcTvqhxl"
+  api_key: "wjqRX5tTSzFyJbwW33ANzwh9V"
+
+mpesa:
+  sandbox: ""
+  consumer_key: ""
+  consumer_secret: ""
+  initiator: ""
+  pay_bill: ""
+  shortcode: ""
+  pass_key: ""
+  validation_url: ""
+  callback_url: ""
+
+sms:
+  username: "mlaru"
+  consumer_secret: "8ce04b6c81f08cd40ce918f9b01bf979bf8d0052ac4e5203e39f4726d059aacf"
+  shortcode: ""
+
 app_secret_key: "eQig7GS4cHO2su"

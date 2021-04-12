@@ -1,9 +1,13 @@
 package model
 
-import "github.com/gofrs/uuid"
+import (
+	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
+)
 
 type Feedback struct {
-	FeedbackId  uuid.UUID `json:"feedback_id"`
-	Subject     string    `json:"subject"`
-	Description string    `json:"description"`
+	FeedbackId  uuid.UUID
+	Subject     string
+	Description string
+	gorm.Model
 }

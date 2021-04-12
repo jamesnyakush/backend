@@ -1,7 +1,13 @@
 package model
 
-import "github.com/gofrs/uuid"
+import (
+	"github.com/gofrs/uuid"
+	"gorm.io/gorm"
+)
 
 type Notice struct {
-	NoticeId uuid.UUID `json:"notice_id"`
+	NoticeId    uuid.UUID
+	BuildingID  uuid.UUID
+	Description string `gorm:"not null"`
+	gorm.Model
 }

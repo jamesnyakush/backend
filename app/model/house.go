@@ -2,39 +2,32 @@ package model
 
 import (
 	"github.com/gofrs/uuid"
-	"time"
+	"gorm.io/gorm"
 )
 
 type House struct {
-	HouseId     uuid.UUID    `json:"house_id"`
-	UserId      uint         `json:"user_id"`
-	BuildingId  uint         `json:"building_id"`
-	HouseTypeId uint         `json:"house_type_id"`
-	HouseImages []HouseImage `json:"house_images"`
-	HouseNumber string       `json:"house_number"`
-	Title       string       `json:"title"`
-	Room        int          `json:"room"`
-	Verified    bool         `json:"verified"`
-	Occupied    bool         `json:"occupied"`
-	Description string       `json:"description"`
-	CreatedAt   time.Time    `json:"created_at"`
-	UpdatedAt   time.Time    `json:"updated_at"`
-	DeletedAt   time.Time    `json:"deleted_at"`
+	HouseId     uuid.UUID
+	HouseNumber string `gorm:"not null;unique"`
+	Title       string `gorm:"not null;unique"`
+	Room        uint   `gorm:"not null"`
+	Verified    bool   `gorm:"not null"`
+	Occupied    bool   `gorm:"not null"`
+	Description string `gorm:"not null"`
+	UserId      uuid.UUID
+	BuildingId  uuid.UUID
+	HouseTypeId uuid.UUID
+	gorm.Model
 }
 
 type HouseImage struct {
-	HouseImageId uint      `json:"house_image_id"`
-	HouseId      uint      `json:"house_id"`
-	ImageUrl     string    `json:"image_url"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
-	DeletedAt    time.Time `json:"deleted_at"`
+	HouseImageId uuid.UUID
+	HouseId      uuid.UUID
+	ImageUrl     string
+	gorm.Model
 }
 
 type HouseType struct {
-	HouseTypeId uint      `json:"house_type_id"`
-	Type        string    `json:"type"`
-	CreatedAt   time.Time `json:"created_at"`
-	UpdatedAt   time.Time `json:"updated_at"`
-	DeletedAt   time.Time `json:"deleted_at"`
+	HouseTypeId uuid.UUID
+	Type        string `gorm:"not null;unique"`
+	gorm.Model
 }

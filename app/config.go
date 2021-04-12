@@ -2,7 +2,7 @@ package app
 
 import (
 	"fmt"
-	"github.com/nyumbapoa/backend/config"
+	"github.com/nyumbapoa/backend/configs"
 )
 
 type Database struct {
@@ -22,6 +22,29 @@ type SMTP struct {
 	FromAddress string
 }
 
+type Pesaswap struct {
+	ConsumerKey string
+	ApiKey      string
+}
+
+type Mpesa struct {
+	Sandbox        string
+	ConsumerKey    string
+	ConsumerSecret string
+	Initiator      string
+	Paybill        string
+	Shortcode      string
+	Passkey        string
+	ValidationUrl  string
+	CallbackUrl    string
+}
+
+type SMS struct {
+	Username       string
+	ConsumerSecret string
+	Shortcode      string
+}
+
 func (d Database) String(sslmode string) string {
 	return fmt.Sprintf(""+
 		"host=%s "+
@@ -34,13 +57,16 @@ func (d Database) String(sslmode string) string {
 }
 
 type Config struct {
-	DB   Database
-	Smtp SMTP
+	DB       Database
+	Smtp     SMTP
+	PesaSwap Pesaswap
+	MPesa    Mpesa
+	Sms      SMS
 
 	Secret string
 }
 
-func GetConfig(cfg config.YamlConfig) Config {
+func GetConfig(cfg configs.YamlConfig) Config {
 	return Config{
 		DB: Database{
 			User:     cfg.Database.User,
@@ -57,7 +83,26 @@ func GetConfig(cfg config.YamlConfig) Config {
 			FromName:    cfg.SMTP.FromName,
 			FromAddress: cfg.SMTP.FromAddress,
 		},
-
+		PesaSwap: Pesaswap{
+			ConsumerKey: cfg.Pesaswap.ConsumerKey,
+			ApiKey:      cfg.Pesaswap.ApiKey,
+		},
+		MPesa: Mpesa{
+			Sandbox:        cfg.Mpesa.Sandbox,
+			ConsumerKey:    cfg.Mpesa.ConsumerKey,
+			ConsumerSecret: cfg.Mpesa.ConsumerSecret,
+			Initiator:      cfg.Mpesa.Initiator,
+			Paybill:        cfg.Mpesa.Paybill,
+			Shortcode:      cfg.Mpesa.Shortcode,
+			Passkey:        cfg.Mpesa.Passkey,
+			ValidationUrl:  cfg.Mpesa.ValidationUrl,
+			CallbackUrl:    "",
+		},
+		Sms: SMS{
+			Username:       cfg.SMS.Username,
+			ConsumerSecret: cfg.SMS.ConsumerSecret,
+			Shortcode:      cfg.SMS.Shortcode,
+		},
 		Secret: cfg.AppSecret,
 	}
 }
