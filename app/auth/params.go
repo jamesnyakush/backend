@@ -7,10 +7,10 @@ import (
 )
 
 type RegisterParams struct {
-	Name     string `json:"name"`
-	Email    string `json:"email"`
-	Phone    string `json:"phone"`
-	Password string `json:"password"`
+	Name     string `json:"name" schema:"name" form:"name"`
+	Email    string `json:"email" schema:"email" form:"email"`
+	Phone    string `json:"phone" schema:"phone" form:"phone"`
+	Password string `json:"password" schema:"password" form:"password"`
 }
 
 func (body RegisterParams) Validate() error {
@@ -26,8 +26,8 @@ func (body RegisterParams) Validate() error {
 }
 
 type LoginParams struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	Email    string `json:"email" schema:"email" form:"email"`
+	Password string `json:"password" schema:"password" form:"password"`
 }
 
 func (body LoginParams) Validate() error {
