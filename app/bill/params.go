@@ -7,19 +7,17 @@ import (
 )
 
 type BillParams struct {
-	UserId                string `json:"user_id"`
-	BillingDate           string `json:"billing_date"`
-	LastBillingDate       string `json:"last_billing_date"`
-	Status                string `json:"status"`
-	Range                 string `json:"range"`
-	Description           string `json:"description"`
-	Amount                string `json:"amount"`
-	TransactionExternalId string `json:"transaction_external_id"`
+	BillingDate           string `json:"billing_date" schema:"billing_date" form:"billing_date"`
+	LastBillingDate       string `json:"last_billing_date" schema:"last_billing_date" form:"last_billing_date"`
+	Status                string `json:"status" schema:"status" form:"status"`
+	Range                 string `json:"range" schema:"range" form:"range"`
+	Description           string `json:"description" schema:"description" form:"description"`
+	Amount                string `json:"amount" schema:"amount" form:"amount"`
+	TransactionExternalId string `json:"transaction_external_id" schema:"transaction_external_id" form:"transaction_external_id"`
 }
 
 func (body BillParams) Validate() error {
 	err := validation.ValidateStruct(body,
-		validation.Field(&body.UserId, validation.Required, is.Alphanumeric),
 		validation.Field(&body.BillingDate, validation.Required, is.ASCII),
 		validation.Field(&body.LastBillingDate, validation.Required, is.ASCII),
 		validation.Field(&body.Status, validation.Required, is.Int),

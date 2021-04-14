@@ -6,14 +6,16 @@ import (
 )
 
 type countyRequest struct {
-	CountyName string `json:"county_name"`
-	CountyCode string `json:"county_code"`
+	CountyName string `json:"county_name" schema:"county_name" form:"county_name"`
+	CountyCode string `json:"county_code" schema:"county_code" form:"county_code"`
 }
 
 func (body countyRequest) Validate() error {
 
-	err := validation.ValidateStruct(body, validation.Field(&body.CountyName, validation.Required),
-		validation.Field(&body.CountyCode, validation.Required, validation.Length(1, 3)))
+	err := validation.ValidateStruct(body,
+		validation.Field(&body.CountyName, validation.Required),
+		validation.Field(&body.CountyCode, validation.Required, validation.Length(1, 3)),
+	)
 
 	return errors.ParseValidationErrorMap(err)
 }
