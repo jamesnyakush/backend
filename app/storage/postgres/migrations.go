@@ -14,6 +14,7 @@ func Migrate(database *storage.Database) {
 		model.Permission{},
 		model.Bill{},
 		model.Building{},
+		model.BuildingImage{},
 		model.County{},
 		model.Feedback{},
 		model.House{},

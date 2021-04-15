@@ -27,12 +27,31 @@ func apiRouteGroup(api fiber.Router, domain *registry.Domain, config app.Config)
 	/*
 		api.Post("/login/:user_type", user_handlers.Authenticate(domain, configs))
 		api.Post("/user/:user_type", user_handlers.Register(domain))
-
-		// create group at /api/admin
-		admin := api.Group("/admin", middleware.AuthByBearerToken(configs.Secret))
-		admin.Post("/assign-float", user_handlers.AssignFloat(domain.Admin))
-		admin.Post("/update-charge", user_handlers.UpdateCharge(domain.Tariff))
-		admin.Get("/get-tariff", user_handlers.GetTariff(domain.Tariff))
-		admin.Put("/super-agent-status", user_handlers.UpdateSuperAgentStatus(domain.Agent))
 	*/
+
+	// Auth (login,register,forgot-password, verify, Fetch All) endpoint
+	auth := api.Group("/auth")
+	auth.Post("/login")
+	auth.Post("/register")
+	auth.Post("/forgot-password")
+	auth.Put("/change-password")
+
+	// Building (Add,Verify, Update, Delete, Fetch All, Verify)
+	building := api.Group("/buildings")
+	building.Post("/")
+	building.Get("/")
+	building.Put("/:id")
+	building.Put("/:id/verify")
+	building.Delete("/:id")
+
+	// House (Add,Verify, Update, Delete ,Fetch All, Verify)
+	houses := api.Group("/houses")
+	houses.Post("/")
+	houses.Get("/")
+	houses.Put("/:id")
+	houses.Put("/:id/verify")
+	houses.Delete("/:id")
+
+	//
+
 }

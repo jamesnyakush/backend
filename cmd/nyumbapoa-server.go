@@ -1,16 +1,10 @@
 package main
 
-import (
-	"github.com/nyumbapoa/backend/app"
-	"github.com/nyumbapoa/backend/app/storage/postgres"
-	"github.com/nyumbapoa/backend/configs"
-	"log"
-	"os"
-)
+import "github.com/nyumbapoa/backend/app/helpers"
 
 func main() {
 
-	log.SetFlags(log.Lshortfile | log.LstdFlags)
+/*	log.SetFlags(log.Lshortfile | log.LstdFlags)
 
 	// read yaml configs file. Dont pass path to read
 	// from default path
@@ -25,7 +19,10 @@ func main() {
 	}
 
 	// run migrations; update tables
-	postgres.Migrate(database)
+	postgres.Migrate(database)*/
 
+	helpers.Info{
+		Name: "Walter Sawenja",
+	}.SendEMail()
 	//helpers.Sms("0746445198", "Jemo Karibu")
 }
