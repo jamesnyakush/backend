@@ -19,7 +19,6 @@ func Migrate(database *storage.Database) {
 		model.Feedback{},
 		model.House{},
 		model.HouseImage{},
-		model.HouseType{},
 		model.Notice{},
 		model.PromoCode{},
 		model.Transaction{},

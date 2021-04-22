@@ -1,10 +1,19 @@
 package main
 
-import "github.com/nyumbapoa/backend/app/helpers"
+import (
+	"fmt"
+	"github.com/nyumbapoa/backend/app"
+	"github.com/nyumbapoa/backend/app/registry"
+	"github.com/nyumbapoa/backend/app/routing"
+	"github.com/nyumbapoa/backend/app/storage/postgres"
+	"github.com/nyumbapoa/backend/configs"
+	"log"
+	"os"
+)
 
 func main() {
 
-/*	log.SetFlags(log.Lshortfile | log.LstdFlags)
+	log.SetFlags(log.Lshortfile | log.LstdFlags)
 
 	// read yaml configs file. Dont pass path to read
 	// from default path
@@ -19,10 +28,19 @@ func main() {
 	}
 
 	// run migrations; update tables
-	postgres.Migrate(database)*/
+	postgres.Migrate(database)
 
-	helpers.Info{
-		Name: "Walter Sawenja",
-	}.SendEMail()
+	domain := registry.NewDomain(config, database)
+
+	// create the fiber server.
+	server := routing.Router(domain, config) // add endpoints
+
+	// listen and serve
+	port := fmt.Sprintf(":%v", 6700)
+	log.Fatal(server.Listen(port))
+
+	//helpers.Info{
+	//	Name: "Walter Sawenja",
+	//}.SendEMail()
 	//helpers.Sms("0746445198", "Jemo Karibu")
 }
