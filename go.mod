@@ -7,6 +7,7 @@ require (
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible
 	github.com/gofiber/fiber/v2 v2.7.1
 	github.com/gofrs/uuid v3.3.0+incompatible
+	github.com/jackc/pgconn v1.8.0
 	github.com/jamesnyakush/AT-SMS v0.0.0-20210406104315-178e9b8113bc
 	github.com/jamesnyakush/pesaswap v0.0.0-20210404195532-8f70b83fbb77
 	github.com/json-iterator/go v1.1.10

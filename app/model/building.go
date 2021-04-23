@@ -14,9 +14,8 @@ const (
 	Onsale      = BuildingType("onsale")
 )
 
-
 type Building struct {
-	BuildingId   uuid.UUID
+	ID           uuid.UUID
 	UserId       uuid.UUID
 	BuildingName string       `gorm:"not null;unique"`
 	BuildingType BuildingType `gorm:"column:building_type"`
@@ -26,8 +25,8 @@ type Building struct {
 }
 
 type BuildingImage struct {
-	BuildingImageId uuid.UUID
-	BuildingId      uuid.UUID
-	ImageUrl        string `gorm:"not null;unique"`
+	ID         uuid.UUID
+	BuildingId uuid.UUID
+	ImageUrl   string `gorm:"not null;unique"`
 	gorm.Model
 }

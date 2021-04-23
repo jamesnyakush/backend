@@ -6,7 +6,7 @@ import (
 )
 
 type MpesaC2B struct {
-	MpesaC2BID        uuid.UUID
+	ID                uuid.UUID
 	TransactionType   string `gorm:"not null"`
 	TransactionID     string `gorm:"not null;unique"`
 	TransactionTime   string `gorm:"not null"`
@@ -23,7 +23,7 @@ type MpesaC2B struct {
 }
 
 type MpesaB2C struct {
-	MpesaB2CID                          uuid.UUID
+	ID                                  uuid.UUID
 	ResultCode                          string `gorm:"not null"`
 	ResultDesc                          string `gorm:"not null"`
 	OriginatorConversationID            string `gorm:"not null"`

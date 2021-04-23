@@ -6,7 +6,7 @@ import (
 )
 
 type Notice struct {
-	NoticeId    uuid.UUID
+	ID          uuid.UUID
 	BuildingID  uuid.UUID
 	Description string `gorm:"not null"`
 	gorm.Model

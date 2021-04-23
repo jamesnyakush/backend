@@ -5,6 +5,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/nyumbapoa/backend/app"
 	"github.com/nyumbapoa/backend/app/auth"
+	"github.com/nyumbapoa/backend/app/routing/responses"
+	"net/http"
 )
 
 func LoginUser(i auth.Interactor, config app.Config) fiber.Handler {
@@ -16,7 +18,24 @@ func LoginUser(i auth.Interactor, config app.Config) fiber.Handler {
 
 func RegisterUser(i auth.Interactor) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
-		fmt.Fprintf(ctx, "Welcome to Register")
+		var params auth.RegisterParams
+		_ = ctx.BodyParser(&params)
+
+		err := params.Validate()
+
+		if err != nil {
+			return err
+		}
+
+		// register admin
+		adm, err := i.Register(params)
+		if err != nil {
+			return err
+		}
+
+		// we use a presenter to reformat the response of admin.
+		_ = ctx.Status(http.StatusOK).JSON(responses.RegistrationResponse(adm.ID))
+
 		return nil
 	}
 }

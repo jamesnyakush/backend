@@ -7,7 +7,7 @@ import (
 )
 
 type Bill struct {
-	BillId                uuid.UUID
+	ID                    uuid.UUID
 	BillingDate           time.Time
 	LastBillingDate       time.Time
 	Status                bool `gorm:"not null"`

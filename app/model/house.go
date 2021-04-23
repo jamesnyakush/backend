@@ -8,8 +8,8 @@ import (
 type HouseType string
 
 type House struct {
-	HouseId     uuid.UUID
-	HouseNumber string    `gorm:"not null;unique"`
+	ID          uuid.UUID
+	Number      string    `gorm:"not null;unique"`
 	Title       string    `gorm:"not null;unique"`
 	Room        uint      `gorm:"not null"`
 	HouseType   HouseType `gorm:"column:house_type"`
@@ -22,8 +22,8 @@ type House struct {
 }
 
 type HouseImage struct {
-	HouseImageId uuid.UUID
-	HouseId      uuid.UUID
-	ImageUrl     string
+	ID       uuid.UUID
+	HouseId  uuid.UUID
+	ImageUrl string
 	gorm.Model
 }

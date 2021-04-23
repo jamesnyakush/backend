@@ -48,13 +48,11 @@ func (e Error) Error() string {
 	return buf.String()
 }
 
-/**
-* ErrorCode returns the code of the root error, if available. Otherwise returns EINTERNAL.
-*
-*  1. Returns no error code for nil errors.
-*  2. Searches the chain of Error.Err until a defined Code is found.
-*  3. If no code is defined then return an internal error code (EINTERNAL)
- */
+
+// ErrorCode returns the code of the root error, if available. Otherwise returns EINTERNAL.
+//  1. Returns no error code for nil errors.
+//  2. Searches the chain of Error.Err until a defined Code is found.
+//  3. If no code is defined then return an internal error code (EINTERNAL)
 func ErrorCode(err error) ERCode {
 	if err == nil {
 		return ""
@@ -66,14 +64,13 @@ func ErrorCode(err error) ERCode {
 	return EINTERNAL
 }
 
-/**
-* ErrorMessage returns the human-readable message of the error, if available.
-*  Otherwise returns a generic error message.
-*
-*  1. Returns no error message for nil errors.
-*  2. Searches the chain of Error.Err until a defined Message is found.
-*  3. If no message is defined then return a generic error message.
- */
+
+//ErrorMessage returns the human-readable message of the error, if available.
+//  Otherwise returns a generic error message.
+//  1. Returns no error message for nil errors.
+//  2. Searches the chain of Error.Err until a defined Message is found.
+//  3. If no message is defined then return a generic error message.
+
 func ErrorMessage(err error) string {
 	if err == nil {
 		return ""
