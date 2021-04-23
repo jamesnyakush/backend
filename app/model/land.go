@@ -5,8 +5,11 @@ import (
 	"gorm.io/gorm"
 )
 
+type LandType string
+type SoilType string
+
 type Land struct {
-	LandID    uuid.UUID
+	ID        uuid.UUID
 	LandType  string
 	TitleType string
 	Price     string

@@ -7,7 +7,6 @@ import (
 	"strings"
 )
 
-// ValidationError
 type ValidationError string
 
 func (e ValidationError) Error() string {
@@ -70,4 +69,3 @@ func ParseValidationErrorMap(err error) error {
 	}
 	return nil
 }
-

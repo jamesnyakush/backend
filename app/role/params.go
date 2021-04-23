@@ -12,7 +12,9 @@ type roleRequest struct {
 
 func (body *roleRequest) Validate() error {
 
-	err := validation.ValidateStruct(body, validation.Field(&body.RoleName, validation.Required, is.Alphanumeric))
+	err := validation.ValidateStruct(body,
+		validation.Field(&body.RoleName, validation.Required, is.Alphanumeric),
+	)
 
 	return errors.ParseValidationErrorMap(err)
 }

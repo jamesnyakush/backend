@@ -2,6 +2,8 @@ package auth
 
 import (
 	"github.com/nyumbapoa/backend/app"
+	"github.com/nyumbapoa/backend/app/errors"
+	"github.com/nyumbapoa/backend/app/helpers"
 	"github.com/nyumbapoa/backend/app/model"
 )
 
@@ -35,5 +37,21 @@ func (i interactor) Register(params RegisterParams) (model.User, error) {
 		Phone:    params.Phone,
 	}
 
-	return user, nil
+	// hash admin password before adding to db.
+	passwordHash, err := helpers.HashPassword(user.Password)
+
+	// if we get an error, it means our hashing func dint work
+	if err != nil {
+		return model.User{}, errors.Error{Err: err, Code: errors.EINTERNAL}
+	}
+
+	// change password to hashed string
+	user.Password = passwordHash
+	usr, err := i.repository.Add(user)
+
+	if err != nil {
+		return model.User{}, err
+	}
+
+	return usr, nil
 }

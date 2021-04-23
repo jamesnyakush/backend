@@ -1,7 +1,8 @@
 package feedback
 
-type Interactor interface {
+import "github.com/nyumbapoa/backend/app"
 
+type Interactor interface {
 }
 
 func NewInteractor() Interactor {
@@ -11,4 +12,5 @@ func NewInteractor() Interactor {
 }
 
 type interactor struct {
+	Config app.Config
 }

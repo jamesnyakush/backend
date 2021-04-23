@@ -6,7 +6,7 @@ import (
 )
 
 type Feedback struct {
-	FeedbackId  uuid.UUID
+	ID          uuid.UUID
 	Subject     string
 	Description string
 	gorm.Model

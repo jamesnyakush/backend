@@ -16,7 +16,7 @@ func (i Info) SendEMail() {
 	//t := templates.New("templates")
 	//
 	//var err error
-	t, err := template.ParseFiles("templates/template.html")
+	t, err := template.ParseFiles("templates/trial.html")
 	println(t)
 	if err != nil {
 		log.Println(err)
@@ -33,7 +33,7 @@ func (i Info) SendEMail() {
 	m.SetHeader("To", "welcome@gmail.com")
 	m.SetHeader("Subject", "golang test")
 	m.SetBody("text/html", result)
-	m.Attach("templates/template.html") // attach whatever you want
+	m.Attach("templates/trial.html") // attach whatever you want
 
 	d := gomail.NewDialer("smtp.mailtrap.io", 2525, "aa9386539a6a4a", "14626f11d10aa5")
 

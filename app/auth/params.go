@@ -7,7 +7,6 @@ import (
 )
 
 type RegisterParams struct {
-	Name     string `json:"name" schema:"name" form:"name"`
 	Email    string `json:"email" schema:"email" form:"email"`
 	Phone    string `json:"phone" schema:"phone" form:"phone"`
 	Password string `json:"password" schema:"password" form:"password"`
@@ -16,7 +15,6 @@ type RegisterParams struct {
 func (body RegisterParams) Validate() error {
 
 	err := validation.ValidateStruct(body,
-		validation.Field(&body.Name, validation.Length(3, 32), is.ASCII),
 		validation.Field(&body.Email, validation.Required, is.Email),
 		validation.Field(&body.Phone, validation.Required, is.Int),
 		validation.Field(&body.Password, validation.Required, validation.Length(8, 32), is.Alphanumeric),
