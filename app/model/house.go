@@ -5,19 +5,23 @@ import (
 	"gorm.io/gorm"
 )
 
-type HouseType string
-
 type House struct {
 	ID          uuid.UUID
-	Number      string    `gorm:"not null;unique"`
-	Title       string    `gorm:"not null;unique"`
-	Room        uint      `gorm:"not null"`
-	HouseType   HouseType `gorm:"column:house_type"`
-	Verified    bool      `gorm:"not null"`
-	Occupied    bool      `gorm:"not null"`
-	Description string    `gorm:"not null"`
+	Number      string `gorm:"not null;unique"`
+	Title       string `gorm:"not null;unique"`
+	Room        uint   `gorm:"not null"`
+	HouseType   uuid.UUID
+	Verified    bool   `gorm:"not null"`
+	Occupied    bool   `gorm:"not null"`
+	Description string `gorm:"not null"`
 	UserId      uuid.UUID
 	BuildingId  uuid.UUID
+	gorm.Model
+}
+
+type HouseType struct {
+	ID   uuid.UUID
+	Type string `gorm:"not null;unique"`
 	gorm.Model
 }
 
